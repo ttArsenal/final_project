@@ -1,4 +1,4 @@
-# final_project_new
+# final_project
 This is the chrome extension to blocking redirection and count suspecious hiding elements
 
 The initial motivation for the extension is to block unintended page redirection or tabs creation. These are pretty annoying when browsing the webpages. 
