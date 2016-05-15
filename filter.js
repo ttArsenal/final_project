@@ -1,15 +1,15 @@
 //This method actually do two things: first filter and find all the unseen objects
 //and frames (size is 1*1); second set the sandbox attribute for the frames within
 //the page, this is to prevent the children frames to change the parent one.
+window.addEventListener("beforeunload", function(event) {
+    event.returnValue = "The page is about to redirect!";
+});
+
 function tag(tag_value){return document.getElementsByTagName(tag_value);}
 function exists(val){ return (val == null || val == undefined || val == "") ? false : true; }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
   //Do not know whether the libs are permitted, so use the native javascript.
-	document.addEventListener("beforeunload", function(event) {
-		//This is used to warn the user a redirection will happen.
-		alert("The page is about to redirect!");
-	});
 
 	var frames = tag("iframe");
 	var objects = tag("object");
