@@ -2,7 +2,7 @@
 //and frames (size is 1*1); second set the sandbox attribute for the frames within
 //the page, this is to prevent the children frames to change the parent one.
 window.addEventListener("beforeunload", function(event) {
-    event.returnValue = "The page is about to redirect!";
+    event.returnValue = "The page is about to redirect from " + event.target.baseURI;
 });
 
 function tag(tag_value){return document.getElementsByTagName(tag_value);}
